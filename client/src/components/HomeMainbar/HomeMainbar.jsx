@@ -11,7 +11,7 @@ const HomeMainbar = () => {
     const navigate = useNavigate();
     
     var questionsList = [{
-        _id:'1',
+        id:1,
         upVotes:3,
         downVotes:2,
         noOfAnswers:2,
@@ -22,16 +22,16 @@ const HomeMainbar = () => {
         askedOn:"jan 1",
         userId: 1,
         answer: [{
-            answerBody: "This is the answer for the question 1, just checking whether the text makes the share ",
+            answerBody: "Answer",
             userAnswered:'kumar',
             answeredOn: "jan 2",
             userId:2,
         }]
     },{
-        _id:'2',
+        id:2,
         upVotes:3,
         downVotes:2,
-        noOfAnswers:1,
+        noOfAnswers:0,
         questionTitle: "What is a function?",
         questionBody: "It meant to be",
         questionTags: ["javascript","R","python"],
@@ -45,10 +45,10 @@ const HomeMainbar = () => {
             userId:2,
         }]
     },{
-        _id:'3',
+        id:3,
         upVotes:1,
         downVotes:2,
-        noOfAnswers:1,
+        noOfAnswers:0,
         questionTitle: "What is a function?",
         questionBody: "It meant to be",
         questionTags: ["javascript","R","python"],
