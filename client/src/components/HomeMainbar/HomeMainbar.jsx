@@ -11,32 +11,56 @@ const HomeMainbar = () => {
     const navigate = useNavigate();
     
     var questionsList = [{
-        id:1,
-        votes:3,
+        _id:'1',
+        upVotes:3,
+        downVotes:2,
         noOfAnswers:2,
         questionTitle: "What is a function?",
         questionBody: "It meant to be",
         questionTags: ["java","node js","react js","mongodb","express js"],
         userPosted: "mano",
-        askedOn:"jan 1"
+        askedOn:"jan 1",
+        userId: 1,
+        answer: [{
+            answerBody: "This is the answer for the question 1, just checking whether the text makes the share ",
+            userAnswered:'kumar',
+            answeredOn: "jan 2",
+            userId:2,
+        }]
     },{
-        id:2,
-        votes:0,
-        noOfAnswers:0,
+        _id:'2',
+        upVotes:3,
+        downVotes:2,
+        noOfAnswers:1,
         questionTitle: "What is a function?",
         questionBody: "It meant to be",
         questionTags: ["javascript","R","python"],
         userPosted: "mano",
-        askedOn:"jan 1"
+        askedOn:"jan 1",
+        userId:1,
+        answer:[{
+            answerBody: "Answer",
+            userAnswered:'kumar',
+            answeredOn: "jan 2",
+            userId:2,
+        }]
     },{
-        id:3,
-        votes:1,
-        noOfAnswers:0,
+        _id:'3',
+        upVotes:1,
+        downVotes:2,
+        noOfAnswers:1,
         questionTitle: "What is a function?",
         questionBody: "It meant to be",
         questionTags: ["javascript","R","python"],
         userPosted: "mano",
-        askedOn:"jan 1"
+        askedOn:"jan 1",
+        userId:1,
+        answer:[{
+            answerBody: "Answer",
+            userAnswered:'kumar',
+            answeredOn: "jan 2",
+            userId:2,
+        }]
     }]
 
     
