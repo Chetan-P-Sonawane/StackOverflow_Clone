@@ -18,6 +18,6 @@ app.use('/user', userRoutes)
 const PORT = process.env.PORT || 5000
 const CONNECTION_URL ="mongodb+srv://chetanps311:4Gr8kZ8ro9hQwGMe@stack-overflow-clone.v47gvjl.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect(CONNECTION_URL,{ useNewUrlParser: true, useUnifiedTopology:true})
-  .then(() => app.listen(PORT,() => {console.log(`server running on port ${PORT}`)}))
+mongoose.connect( CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology:true})
+  .then(() => app.listen(PORT, () => {console.log(`server running on port ${PORT}`)}))
   .catch((err) => console.log(err.message))

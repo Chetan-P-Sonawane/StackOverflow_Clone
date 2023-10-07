@@ -31,8 +31,7 @@ const Auth = () => {
      if(!email && !password){
       alert('Enter email and Password')
      }
-
-     if(!isSignup){
+     if(isSignup){
        if(!name){
         alert("Enter a name to continue" )
        }
@@ -40,6 +39,7 @@ const Auth = () => {
      }else{
       dispatch(login({ email, password }, navigate))
      }
+     console.log(name,email,password)
   }
 
   return (
@@ -80,7 +80,7 @@ const Auth = () => {
           {
             isSignup && (
               <label htmlFor="check">
-                  <input type="checkbox" id="check" required />
+                  <input type="checkbox" id="check"  />
                   <p style={{  fontSize:"13px"}}> Opt-in recieve occasional product updates,
                      user research invitations, company accouncements and digests. </p>
 
