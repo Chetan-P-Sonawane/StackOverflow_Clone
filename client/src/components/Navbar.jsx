@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {Link, useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 import { useSelector, useDispatch} from 'react-redux'
 
 import logo from "../assets/logo.png"
@@ -9,7 +9,7 @@ import Avatar from "./Avatar/Avatar"
 // import Button from "./Button/Button"
 import "./Navbar.css"
 import { setCurrentUser } from '../actions/currentUser'
-// import { setCurrentUser } from '../actions/currentUser'
+
 
 const Navbar = () => {
    
@@ -46,7 +46,7 @@ const Navbar = () => {
                   py="5px" 
                   color="White" 
                   borderRadius="50%" center
-                  > <Link to="/User" style={{color:"white", textDecoration:"none" }}> C </Link>
+                  > <Link to="/User" style={{color:"white", textDecoration:"none" }}> {User.result.name.charAt(0).toUpperCase()} </Link>
                
                </Avatar> 
                <button className="nav-item nav-links">Log out</button>
