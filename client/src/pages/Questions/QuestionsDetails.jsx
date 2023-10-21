@@ -8,7 +8,7 @@ import upvote from '../../assets/sort-up.svg'
 import downvote from '../../assets/sort-down.svg'
 import './Questions.css'
 import Avatar from '../../components/Avatar/Avatar'
-import { postAnswer } from '../../actions/question'
+import { postAnswer, deleteQuestion } from '../../actions/question'
 import DisplayAnswer from './DisplayAnswer'
 
 const QuestionsDetails = () => {
@@ -87,7 +87,7 @@ const QuestionsDetails = () => {
             if(Answer === ''){
                 alert('Enter an answer before submitting')
             }else{
-                dispatch(postAnswer({id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name }))
+                dispatch(postAnswer({id, noOfAnswers: answerLength + 1, answerBody: Answer, userAnswered: User.result.name, userId: User.result._id }))
             }
         }
     }
@@ -95,6 +95,10 @@ const QuestionsDetails = () => {
     const handleShare = () => {
         copy(url+location.pathname)
         alert('Copied url : '+url+location.pathname)
+    }
+
+    const handleDelete = () => {
+        dispatch(deleteQuestion(id, Navigate))
     }
 
     return (
@@ -126,7 +130,12 @@ const QuestionsDetails = () => {
                                 <div className='question-actions-user'>
                                     <div>
                                         <button type='button' onClick={handleShare}>Share</button>
-                                        <button type='button'>Delete</button>
+                                        {
+                                            User?.result?._id === question?.userId && (
+                                                <button type='button' onClick={handleDelete}>Delete</button>
+                                            )
+                                        }
+                                        
                                     </div>
                                     <div>
                                         <p>asked {moment(question.askedOn).fromNow()}</p>

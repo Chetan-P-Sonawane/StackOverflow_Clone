@@ -1,4 +1,3 @@
-// import React from 'react'
 import * as api from '../api/index'
 
 export const askQuestion = (questionData, navigate) => async (dispatch) => {
@@ -32,3 +31,13 @@ export const postAnswer = (answerData) => async (dispatch) => {
   }
   
 }
+
+export const deleteQuestion = (id, navigate) => async (dispatch) => {
+  try {
+    await api.deleteQuestion(id);
+    dispatch(fetchAllQuestions())
+    navigate('/')
+  } catch (error) {
+    console.log(error)
+  }
+} 
