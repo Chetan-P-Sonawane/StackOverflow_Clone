@@ -25,15 +25,15 @@ const DisplayAnswer = ({question,handleShare}) => {
               <div>
                 <button type="button" onClick={handleShare}>Share</button>
                 {
-                  User?.result?._id === question?.userId && (
+                  User?.result?._id === ans?.userId && (
                           <button type='button' onClick={() => handleDelete(ans._id, question.noOfAnswers)}>Delete</button>
                       )
                   }
               </div>
               <div>
                  <p>answered {moment(ans.answeredOn).fromNow()}</p>
-              <Link to={`/User/${question.userId}`} className='user-link' style={{color:'#0086d8', textDecoration:"none"}}>
-                  <Avatar backgroundColor="green" px="8px" py="5px" textDecoration="none">{ans.userAnswered.charAt(0).toUpperCase()}</Avatar>
+              <Link to={`/Users/${ans.userId}`} className='user-link' style={{color:'#0086d8', textDecoration:"none"}}>
+                  <Avatar backgroundColor="green" px="9px" py="5px" borderRadius="3px" textDecoration="none">{ans.userAnswered.charAt(0).toUpperCase()}</Avatar>
                   <div>
                       {ans.userAnswered}
                   </div>

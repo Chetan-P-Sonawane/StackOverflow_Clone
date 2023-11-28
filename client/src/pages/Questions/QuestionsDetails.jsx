@@ -18,59 +18,6 @@ const QuestionsDetails = () => {
     const questionsList = useSelector(state => state.questionsReducer)
 
 
-    // var questionsList = [{
-    //     _id:'1',
-    //     upVotes:3,
-    //     downVotes:2,
-    //     noOfAnswers:2,
-    //     questionTitle: "What is a function?",
-    //     questionBody: "It meant to be",
-    //     questionTags: ["java","node js","react js","mongodb","express js"],
-    //     userPosted: "mano",
-    //     askedOn:"jan 1",
-    //     userId: 1,
-    //     answer: [{
-    //         answerBody: "This is the answer for the question 1, just checking whether the text makes the share ",
-    //         userAnswered:'kumar',
-    //         answeredOn: "jan 2",
-    //         userId:2,
-    //     }]
-    // },{
-    //     _id:'2',
-    //     upVotes:3,
-    //     downVotes:2,
-    //     noOfAnswers:1,
-    //     questionTitle: "What is a function?",
-    //     questionBody: "It meant to be",
-    //     questionTags: ["javascript","R","python"],
-    //     userPosted: "mano",
-    //     askedOn:"jan 1",
-    //     userId:1,
-    //     answer:[{
-    //         answerBody: "Answer",
-    //         userAnswered:'kumar',
-    //         answeredOn: "jan 2",
-    //         userId:2,
-    //     }]
-    // },{
-    //     _id:'3',
-    //     upVotes:1,
-    //     downVotes:2,
-    //     noOfAnswers:1,
-    //     questionTitle: "What is a function?",
-    //     questionBody: "It meant to be",
-    //     questionTags: ["javascript","R","python"],
-    //     userPosted: "mano",
-    //     askedOn:"jan 1",
-    //     userId:1,
-    //     answer:[{
-    //         answerBody: "Answer",
-    //         userAnswered:'kumar',
-    //         answeredOn: "jan 2",
-    //         userId:2,
-    //     }]
-    // }]
-
     const [Answer, setAnswer] = useState('')
     const Navigate = useNavigate()
     const dispatch = useDispatch()
@@ -147,8 +94,8 @@ const QuestionsDetails = () => {
                                     </div>
                                     <div>
                                         <p>asked {moment(question.askedOn).fromNow()}</p>
-                                        <Link to={`/User/${question.userId}`} className='user-link' style={{color:'#0086d8'}}>
-                                            <Avatar backgroundColor="orange" px="8px" py="5px" >{question.userPosted.charAt(0).toUpperCase()}</Avatar>
+                                        <Link to={`/Users/${question.userId}`} className='user-link' style={{color:'#0086d8'}}>
+                                            <Avatar backgroundColor="orange" px="9px" py="5px" borderRadius="3px" >{question.userPosted.charAt(0).toUpperCase()}</Avatar>
                                             <div>
                                                 {question.userPosted}
                                             </div>
